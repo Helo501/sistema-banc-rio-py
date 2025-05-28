@@ -1,8 +1,9 @@
-# sistema-banc-rio-pysaldo = 0
+# sistema-banc-rio-pysaldo
+saldo = 0
 extrato = ""
 
 while True:
-    print("\n=== MENU ===")
+    print("MENU")
     print("1 - Depositar")
     print("2 - Sacar")
     print("3 - Ver extrato")
@@ -14,7 +15,7 @@ while True:
         valor = float(input("Valor do depósito: R$ "))
         if valor > 0:
             saldo += valor
-            extrato += f"Depósito: R$ {valor:.2f}\n"
+            extrato += f"Depósito: R$ {valor:.2f}"
             print("Depósito feito com sucesso!")
         else:
             print("Valor inválido.")
@@ -23,13 +24,13 @@ while True:
         valor = float(input("Valor do saque: R$ "))
         if valor > 0 and valor <= saldo:
             saldo -= valor
-            extrato += f"Saque: R$ {valor:.2f}\n"
+            extrato += f"Saque: R$ {valor:.2f}"
             print("Saque feito com sucesso!")
         else:
             print("Saque inválido. Verifique o valor ou saldo.")
 
     elif opcao == "3":
-        print("\n=== EXTRATO ===")
+        print("EXTRATO ")
         if extrato == "":
             print("Nenhuma movimentação.")
         else:
